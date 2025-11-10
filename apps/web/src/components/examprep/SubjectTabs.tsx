@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useRef } from 'react';
+import type { KeyboardEvent } from 'react';
 
 const TAB_LABELS = ['Syllabus', 'Notes', 'PYQs', 'MCQ', 'Assignments', 'Practicals', 'Mock'] as const;
 
@@ -15,7 +16,7 @@ const SubjectTabs = ({ active, onChange }: SubjectTabsProps) => {
   const listRef = useRef<HTMLDivElement>(null);
 
   const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    (event: KeyboardEvent<HTMLButtonElement>) => {
       const buttons = listRef.current?.querySelectorAll<HTMLButtonElement>('button');
       if (!buttons?.length) return;
       const currentIndex = Array.from(buttons).indexOf(event.currentTarget);

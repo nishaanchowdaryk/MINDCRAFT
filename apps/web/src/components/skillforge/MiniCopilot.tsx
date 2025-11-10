@@ -11,7 +11,7 @@ const actions = [
 
 const responses: Record<string, string> = {
   explain: 'Break the task into semantic regions: header, navigation, and main content blocks.',
-  hint: 'Consider using CSS Grid with repeat(auto-fit, minmax())) for adaptive columns.',
+  hint: 'Consider using CSS Grid with repeat(auto-fit, minmax(240px, 1fr)) for adaptive columns.',
   examples: 'Check the SkillForge gallery for dashboard layouts and accessible form patterns.'
 };
 

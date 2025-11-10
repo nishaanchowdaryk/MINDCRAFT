@@ -32,7 +32,7 @@ export const MainNav = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="hidden h-full w-24 flex-col border-r border-border bg-surface py-6 lg:flex"
+      className="hidden h-full w-24 flex-col border-r border-border bg-bg py-6 lg:flex"
       role="navigation"
       onKeyDown={(event) => {
         const { key } = event;
@@ -57,7 +57,7 @@ export const MainNav = () => {
               <Link
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
-                className={`group relative flex flex-col items-center gap-2 rounded-md px-2 py-3 text-sm text-muted transition ${focusRing} hover:bg-bg`}
+                className={`group relative flex flex-col items-center gap-2 rounded-md px-2 py-3 text-sm text-muted transition ${focusRing} hover:bg-surface`}
                 ref={(node) => {
                   itemRefs.current[index] = node;
                 }}

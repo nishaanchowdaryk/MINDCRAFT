@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import AnalyticsPanel from '@/components/examprep/AnalyticsPanel';
 import DegreeSelector from '@/components/examprep/DegreeSelector';
@@ -17,8 +17,6 @@ const ExamPrepPage = () => {
   const [tab, setTab] = useState<SubjectTab>('Syllabus');
   const { data, loading } = useSubjectData(degree.degreeId, degree.branchId, degree.semester);
   const practice = usePractice();
-
-  const prompt = useMemo(() => practice.activeQuestion.prompt, [practice.activeQuestion.prompt]);
 
   return (
     <div className="space-y-6">
@@ -40,7 +38,7 @@ const ExamPrepPage = () => {
         </div>
         <div className="space-y-4">
           <TestRunnerShell
-            prompt={prompt}
+            prompt={practice.activeQuestion.prompt}
             questions={practice.questions}
             activeIndex={practice.activeIndex}
             timeLabel={practice.timeLabel}
